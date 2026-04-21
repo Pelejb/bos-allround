@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diensten | Bos Allround — Montage & Bouw Westland</title>
+    <meta name="description" content="Montage, bouw en onderhoud door Bos Allround B.V. Bekijk onze diensten: staalmontage, nieuwbouw, renovatie, kassenbouw en meer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { steel: '#2d3a4a', rust: '#d97706', concrete: '#f5f0eb', beam: '#1a1a2e', iron: '#374151' } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .mono { font-family: 'DM Mono', monospace; }
+        .texture-bg { background-color: #faf8f5; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c8b8' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .warm-gradient { background: linear-gradient(135deg, #1a1a2e 0%, #2d3a4a 50%, #1a1a2e 100%); }
+        .stripe-pattern { background-image: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(217,119,6,0.05) 10px, rgba(217,119,6,0.05) 20px); }
+        .accent-bar { width: 40px; height: 4px; background: #d97706; border-radius: 2px; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .card-lift { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .card-lift:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); }
+        .nav-warm { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Navigation -->
+    <nav class="nav-warm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="bg-beam rounded-lg px-3 py-2"><span class="text-rust font-extrabold text-lg tracking-tight">BOS</span></div>
+                <div class="hidden sm:block">
+                    <span class="text-beam font-bold leading-tight block">Bos Allround</span>
+                    <span class="text-gray-400 text-xs mono">MONTAGE & BOUW</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-gray-500 hover:text-rust transition text-sm">Home</a>
+                <a href="diensten.html" class="text-rust text-sm font-semibold">Diensten</a>
+                <a href="over-ons.html" class="text-gray-500 hover:text-rust transition text-sm">Over Ons</a>
+                <a href="contact.html" class="text-gray-500 hover:text-rust transition text-sm">Contact</a>
+                <a href="tel:0653762112" class="bg-beam text-white font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-steel transition">06-53762112</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-beam" aria-label="Menu openen">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 pb-4 bg-white">
+            <a href="index.html" class="block py-3 text-gray-500">Home</a>
+            <a href="diensten.html" class="block py-3 text-rust font-semibold">Diensten</a>
+            <a href="over-ons.html" class="block py-3 text-gray-500">Over Ons</a>
+            <a href="contact.html" class="block py-3 text-gray-500">Contact</a>
+            <a href="tel:0653762112" class="block mt-2 bg-beam text-white font-bold text-center py-3 rounded-lg">Bel 06-53762112</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="warm-gradient text-white py-20 relative overflow-hidden">
+        <div class="stripe-pattern absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="accent-bar"></div>
+                <span class="mono text-rust text-sm">ONZE DIENSTEN</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                Wat wij<br><span class="text-rust">voor u bouwen</span>
+            </h1>
+            <p class="text-gray-300 text-lg max-w-xl">Van montage tot renovatie — wij leveren gespecialiseerd bouwwerk waar u op kunt vertrouwen.</p>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section class="texture-bg py-24">
+        <div class="max-w-7xl mx-auto px-6 space-y-8">
+
+            <!-- Service 1 -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 card-lift reveal">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <span class="mono text-5xl font-bold text-rust/10">01</span>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="w-12 h-12 rounded-xl bg-rust/10 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-rust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-beam mb-4">Montage & Assemblage</h2>
+                        <p class="text-gray-500 leading-relaxed">Professionele montage van staalconstructies, gevelelementen, en bouwkundige onderdelen. Wij werken nauwkeurig en volgens tekening, altijd met oog voor veiligheid.</p>
+                    </div>
+                    <div class="md:col-span-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Staalconstructies</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Gevelmontage</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Prefab elementen</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Industriële montage</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 card-lift reveal">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <span class="mono text-5xl font-bold text-beam/10">02</span>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="w-12 h-12 rounded-xl bg-beam/10 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-beam" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-beam mb-4">Nieuwbouw & Verbouw</h2>
+                        <p class="text-gray-500 leading-relaxed">Van fundament tot oplevering. Gespecialiseerde bouwwerkzaamheden voor utiliteit en woningbouw. Wij bouwen kwaliteit die blijft staan.</p>
+                    </div>
+                    <div class="md:col-span-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Utiliteitsbouw</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Bedrijfspanden</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Aanbouw en uitbreiding</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Interne verbouwingen</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 card-lift reveal">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <span class="mono text-5xl font-bold text-rust/10">03</span>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="w-12 h-12 rounded-xl bg-rust/10 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-rust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-beam mb-4">Kassenbouw & Glastuinbouw</h2>
+                        <p class="text-gray-500 leading-relaxed">Als Westlands bedrijf kennen wij de glastuinbouw door en door. Montage en onderhoud van kasconstructies, scherminstallaties en technische systemen.</p>
+                    </div>
+                    <div class="md:col-span-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Kasmontage</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Scherminstallaties</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Renovatie van kassen</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Sloop en opruiming</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 card-lift reveal">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <span class="mono text-5xl font-bold text-beam/10">04</span>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="w-12 h-12 rounded-xl bg-beam/10 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-beam" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-beam mb-4">Onderhoud & Reparatie</h2>
+                        <p class="text-gray-500 leading-relaxed">Preventief en correctief onderhoud van constructies en gebouwen. Wij zorgen ervoor dat alles in goede staat blijft — planmatig en betrouwbaar.</p>
+                    </div>
+                    <div class="md:col-span-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Preventief onderhoud</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Storingsreparaties</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Constructieherstel</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-beam rounded-sm"></span><span class="text-gray-600">Onderhoudscontracten</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white rounded-2xl p-8 md:p-12 card-lift reveal">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <span class="mono text-5xl font-bold text-rust/10">05</span>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="w-12 h-12 rounded-xl bg-rust/10 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-rust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-beam mb-4">Allround Inzet</h2>
+                        <p class="text-gray-500 leading-relaxed">Heeft u extra mankracht nodig op de bouwplaats? Wij leveren vakbekwame medewerkers die direct inzetbaar zijn. Flexibel en betrouwbaar.</p>
+                    </div>
+                    <div class="md:col-span-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Detachering vakmensen</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Projectondersteuning</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Flexibele inzet</span></div>
+                            <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 bg-rust rounded-sm"></span><span class="text-gray-600">Korte en lange termijn</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="warm-gradient py-24 relative overflow-hidden">
+        <div class="stripe-pattern absolute inset-0"></div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Project in <span class="text-rust">gedachten?</span></h2>
+            <p class="text-gray-300 text-lg mb-10">Neem contact op voor een vrijblijvende offerte of advies.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:0653762112" class="inline-flex items-center justify-center gap-3 bg-rust text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-amber-600 transition">Bel 06-53762112</a>
+                <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl hover:border-rust hover:text-rust transition">Stuur een Bericht</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-beam text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-steel rounded-lg px-3 py-2"><span class="text-rust font-extrabold">BOS</span></div>
+                        <span class="text-white font-bold">Bos Allround B.V.</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">Montage en gespecialiseerde bouw in Poeldijk, Westland.</p>
+                </div>
+                <div>
+                    <h4 class="mono text-rust/60 text-xs mb-4 uppercase">Navigatie</h4>
+                    <div class="flex flex-col gap-2 text-sm">
+                        <a href="index.html" class="text-gray-400 hover:text-rust transition">Home</a>
+                        <a href="diensten.html" class="text-gray-400 hover:text-rust transition">Diensten</a>
+                        <a href="over-ons.html" class="text-gray-400 hover:text-rust transition">Over Ons</a>
+                        <a href="contact.html" class="text-gray-400 hover:text-rust transition">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="mono text-rust/60 text-xs mb-4 uppercase">Contact</h4>
+                    <div class="flex flex-col gap-2 text-sm text-gray-400">
+                        <a href="tel:0653762112" class="hover:text-rust transition">06-53762112</a>
+                        <span>Uranus 4</span>
+                        <span>2685 LZ Poeldijk</span>
+                        <span>KvK: 81125992</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2025 Bos Allround B.V.</p>
+                <p class="mono">Westland, Zuid-Holland</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
